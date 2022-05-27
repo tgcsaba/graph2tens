@@ -1,0 +1,667 @@
+GSANBio:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 10
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBio:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 10
+    n_trials: 1
+  model:
+    basepoint: true
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSANCit:
+  data:
+    dataset_name: cora,citeseer,pubmed
+  experiment:
+    n_splits: 100
+    n_trials: 1
+  model:
+    attn_dropout: 0.3
+    basepoint: false
+    diff: false
+    dropout: 0.9
+    gnn_type: GSAN
+    jk_type: null
+    l2_reg: 0.01
+    learn_embedding: false
+    n_depth: 1
+    n_features: 64
+    n_heads: 8
+    n_levels: 2
+    n_post: 0
+    n_pre: 0
+    n_steps: 5
+    norm_type: layer
+  opt:
+    n_epochs: 1000
+    lr_init: 0.01
+    monitor: val_loss
+    mode: min
+    es_patience: 50
+GSNCit:
+  data:
+    dataset_name: cora,citeseer,pubmed
+  experiment:
+    n_splits: 100
+    n_trials: 1
+  model:
+    basepoint: false
+    diff: false
+    dropout: 0.9
+    gnn_type: GSN
+    jk_type: null
+    l2_reg: 0.01
+    learn_embedding: false
+    n_depth: 1
+    n_features: 64
+    n_levels: 2
+    n_post: 0
+    n_pre: 0
+    n_steps: 5
+    norm_type: layer
+  opt:
+    n_epochs: 1000
+    lr_init: 0.01
+    monitor: val_loss
+    mode: min
+    es_patience: 50
+GSANCitK1:
+  data:
+    dataset_name: cora,citeseer,pubmed
+    khop: 1
+  experiment:
+    n_splits: 100
+    n_trials: 1
+  model:
+    attn_dropout: 0.3
+    basepoint: false
+    diff: false
+    dropout: 0.9
+    gnn_type: GSAN
+    jk_type: null
+    l2_reg: 0.01
+    learn_embedding: false
+    n_depth: 1
+    n_features: 64
+    n_heads: 8
+    n_levels: 2
+    n_post: 0
+    n_pre: 0
+    n_steps: 5
+    norm_type: layer
+  opt:
+    n_epochs: 1000
+    lr_init: 0.01
+    monitor: val_loss
+    mode: min
+    es_patience: 50
+GSNCitK1:
+  data:
+    dataset_name: cora,citeseer,pubmed
+    khop: 1
+  experiment:
+    n_splits: 100
+    n_trials: 1
+  model:
+    basepoint: false
+    diff: false
+    dropout: 0.9
+    gnn_type: GSN
+    jk_type: null
+    l2_reg: 0.01
+    learn_embedding: false
+    n_depth: 1
+    n_features: 64
+    n_levels: 2
+    n_post: 0
+    n_pre: 0
+    n_steps: 5
+    norm_type: layer
+  opt:
+    n_epochs: 1000
+    lr_init: 0.01
+    monitor: val_loss
+    mode: min
+    es_patience: 50
+GSANCitK2:
+  data:
+    dataset_name: cora,citeseer,pubmed
+    khop: 2
+  experiment:
+    n_splits: 100
+    n_trials: 1
+  model:
+    attn_dropout: 0.3
+    basepoint: false
+    diff: false
+    dropout: 0.9
+    gnn_type: GSAN
+    jk_type: null
+    l2_reg: 0.01
+    learn_embedding: false
+    n_depth: 1
+    n_features: 64
+    n_heads: 8
+    n_levels: 2
+    n_post: 0
+    n_pre: 0
+    n_steps: 5
+    norm_type: layer
+  opt:
+    n_epochs: 1000
+    lr_init: 0.01
+    monitor: val_loss
+    mode: min
+    es_patience: 50
+GSNCitK2:
+  data:
+    dataset_name: cora,citeseer,pubmed
+    khop: 2
+  experiment:
+    n_splits: 100
+    n_trials: 1
+  model:
+    basepoint: false
+    diff: false
+    dropout: 0.9
+    gnn_type: GSN
+    jk_type: null
+    l2_reg: 0.01
+    learn_embedding: false
+    n_depth: 1
+    n_features: 64
+    n_levels: 2
+    n_post: 0
+    n_pre: 0
+    n_steps: 5
+    norm_type: layer
+  opt:
+    n_epochs: 1000
+    lr_init: 0.01
+    monitor: val_loss
+    mode: min
+    es_patience: 50
+GSANBioNoNorm:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: null
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSANBioNoSkip:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: false
+    pre_skip: false
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSANBioNoBP:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: false
+    diff: true
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSANBioNoDiff:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: false
+    diff: false
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSANBioNoEmbed:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: false
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSANBioAvgPool:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: avg
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSANBioNoJK:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    attn_dropout: 0.1
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSAN
+    jk_type: null
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_heads: 8
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBioNoNorm:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: null
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBioNoSkip:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: false
+    pre_skip: false
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBioNoBP:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    basepoint: false
+    diff: true
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBioNoDiff:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    basepoint: false
+    diff: false
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBioNoEmbed:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: false
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBioAvgPool:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: jk_max
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: avg
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
+GSNBioNoJK:
+  data:
+    batch_size: 128
+    dataset_name: NCI1,NCI109
+  experiment:
+    n_splits: 5
+    n_trials: 1
+  model:
+    basepoint: true
+    diff: true
+    dropout: 0.1
+    gnn_type: GSN
+    jk_type: null
+    l2_reg: 0.0001
+    learn_embedding: true
+    n_depth: 4
+    n_features: 128
+    n_levels: 2
+    n_post: 1
+    n_post_dim: 256
+    n_pre: 1
+    n_steps: 5
+    norm_type: layer
+    pool: attn
+    post_skip: true
+    pre_skip: true
+  opt:
+    n_epochs: 200
+    lr_init: 0.001
+    lr_schedule: cosine
