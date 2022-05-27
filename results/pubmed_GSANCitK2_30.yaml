@@ -1,0 +1,45 @@
+data:
+  dataset_name: cora,citeseer,pubmed
+  khop: 2
+experiment:
+  n_splits: 100
+  n_trials: 1
+model:
+  attn_dropout: 0.3
+  basepoint: false
+  diff: false
+  dropout: 0.9
+  gnn_type: GSAN
+  jk_type: null
+  l2_reg: 0.01
+  learn_embedding: false
+  n_depth: 1
+  n_features: 64
+  n_heads: 8
+  n_levels: 2
+  n_post: 0
+  n_pre: 0
+  n_steps: 5
+  norm_type: layer
+opt:
+  es_patience: 50
+  lr_init: 0.01
+  mode: min
+  monitor: val_loss
+  n_epochs: 1000
+results:
+  test:
+    acc: 0.7282851338386536
+    auprc: 0.7880309820175171
+    auroc: 0.8832588195800781
+    loss: 0.9728334546089172
+  train:
+    acc: 1.0
+    auprc: 1.0000007152557373
+    auroc: 1.0
+    loss: 0.20813775062561035
+  val:
+    acc: 0.7777776718139648
+    auprc: 0.8778722286224365
+    auroc: 0.9323149919509888
+    loss: 0.7357178926467896

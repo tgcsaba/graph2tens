@@ -1,0 +1,47 @@
+data:
+  batch_size: 128
+  dataset_name: NCI1,NCI109
+experiment:
+  n_splits: 5
+  n_trials: 1
+model:
+  attn_dropout: 0.1
+  basepoint: true
+  diff: true
+  dropout: 0.1
+  gnn_type: GSAN
+  jk_type: null
+  l2_reg: 0.0001
+  learn_embedding: true
+  n_depth: 4
+  n_features: 128
+  n_heads: 8
+  n_levels: 2
+  n_post: 1
+  n_post_dim: 256
+  n_pre: 1
+  n_steps: 5
+  norm_type: layer
+  pool: attn
+  post_skip: true
+  pre_skip: true
+opt:
+  lr_init: 0.001
+  lr_schedule: cosine
+  n_epochs: 200
+results:
+  test:
+    acc: 0.8296837210655212
+    auprc: 0.8582466840744019
+    auroc: 0.88149493932724
+    loss: 115.63595581054688
+  train:
+    acc: 0.9990875720977783
+    auprc: 0.9999963641166687
+    auroc: 0.9999963045120239
+    loss: 0.7378367185592651
+  val:
+    acc: 0.798053503036499
+    auprc: 0.8437227010726929
+    auroc: 0.8676304817199707
+    loss: 149.19337463378906
