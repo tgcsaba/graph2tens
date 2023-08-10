@@ -1,6 +1,6 @@
 # Capturing Graphs with Hypo-Elliptic Diffusions
 ---
-A new Graph Neural Network (GNN) that uses tensor features of random walks
+A novel Graph Neural Network (GNN) using tensor features of random walks
 ---
 This code package contains supplementary code to the NeurIPS 2022 paper <a href="https://arxiv.org/abs/2205.14092" title="Capturing Graphs with Hypo-Elliptic Diffusions">Capturing Graphs with Hypo-Elliptic Diffusions</a>.
 
